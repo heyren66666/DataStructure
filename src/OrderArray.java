@@ -72,5 +72,21 @@ public class OrderArray {
     }
 
     //列出所有元素
-    public void
+    public void display(){
+        for (int i=0;i<length;i++) {
+            System.out.println(intArray[i]+"\t");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args){
+        OrderArray orderArray=new OrderArray(4);
+        orderArray.insert(3);
+        orderArray.insert(4);
+        orderArray.insert(6);
+        orderArray.insert(8);
+
+        int i=orderArray.find(8);
+        System.out.println("在队列中的位置是："+i);
+    }
 }
