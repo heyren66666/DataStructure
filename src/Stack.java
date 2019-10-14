@@ -8,27 +8,27 @@
 public class Stack {
     private int size;//栈的大小
     private int top;//栈顶元素的下标
-    private int[] stackArray;//栈的容器
+    private char[] stackArray;//栈的容器
 
     //构造函数
     public Stack(int size){
-        stackArray=new int[size];
+        stackArray=new char[size];
         top=-1;//初始化栈的时候，栈内无元素，栈顶下标设置为-1
         this.size=size;
     }
 
     //入栈，同时，栈顶院的下标加一
-    public void push(int elem){
+    public void push(char elem){
         stackArray[++top]=elem;//插入栈顶
     }
 
     //出栈，删除栈顶元素，同时，栈顶元素的下标减一
-    public int pop(){
+    public char pop(){
         return stackArray[top--];
     }
 
     //查看栈顶元素，但不删除
-    public int peek(){
+    public char peek(){
         return stackArray[top];
     }
 
