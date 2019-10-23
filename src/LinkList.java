@@ -12,7 +12,7 @@ public class LinkList {
 
     //删除第一个链结点，返回删除的链结点引用
     public Link deleteFirst() throws Exception{
-        if (isEmpty){
+        if (isEmpty()){
             throw new Exception("链表尾空！不能进行删除操作");
         }
         Link temp=first;
@@ -60,5 +60,29 @@ public class LinkList {
     }
 
     //查找属性为指定值得链结点
+    public Link find(int key){
+        Link link=null;
+        Link cur=first;
+        Link next=null;
+        Link previous=null;
+        while (cur!=null){
+            if (cur.age==key){
+                link=cur;
+                break;
+            }else if (cur.next==null){//当前链结点不是要找的目标且下一个链结点为null，则证明没有找到目标
+                break;
+            }
 
+            //当前链结点不是要找的目标且存在下一个链结点，则向后继续寻找
+            next=next.next;
+            cur=cur.next;
+            previous=cur;
+        }
+        return link;
+    }
+
+    //判空
+    public boolean isEmpty(){
+        return (first==null);
+    }
 }
